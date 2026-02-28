@@ -52,4 +52,5 @@ app.post("/add-user", (req, res) => {
 
 app.listen(PORT, () => {
   console.log(`🚀 Backend running on port ${PORT}`);
+  console.log("Deployed via GitHub Actions");
 });
