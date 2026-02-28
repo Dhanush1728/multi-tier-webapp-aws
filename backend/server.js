@@ -42,5 +42,5 @@ app.get("/users", (req, res) => {
 });
 
 app.listen(3000, () => {
-  console.log("Backend restarted via CI/CD");
+  console.log("Backend running on port 3000");
 });
