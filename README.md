@@ -1,149 +1,139 @@
-📦 Multi-Tier Web Application (AWS + CI/CD)
-🚀 Live Demo
+# 📦 Multi-Tier Web Application (AWS + CI/CD)
 
-🔗 https://d32chaxxcetx4.cloudfront.net
+## 🚀 Live Demo
+- Frontend (CloudFront): https://d32chaxxcetx4.cloudfront.net  
+- Backend (ALB): http://multi-tier-alb-1079659786.eu-north-1.elb.amazonaws.com  
 
-🔗 http://multi-tier-alb-1079659786.eu-north-1.elb.amazonaws.com
+---
 
-📌 Project Overview
+## 📌 Project Overview
 
-Multi-Tier Web Application is a cloud-deployed full-stack web application built using AWS infrastructure and automated CI/CD deployment.
+This project is a cloud-deployed **3-tier web application** built using AWS services and automated using a CI/CD pipeline.
 
-The application demonstrates real-world 3-tier architecture:
+The application follows a real-world architecture:
+- Frontend hosted on **Amazon S3 + CloudFront**
+- Backend deployed on **Amazon EC2 (Node.js + Express)**
+- Database managed using **Amazon RDS (MySQL)**
+- Automated deployment using **GitHub Actions (CI/CD)**
 
-🌐 Frontend hosted on Amazon S3 + CloudFront
+---
 
-🖥 Backend running on Amazon EC2 (Node.js + Express)
+## ✨ Features
 
-🗄 Database using Amazon RDS (MySQL)
+- Add user data through frontend
+- Fetch user data from RDS database
+- Load-balanced backend using ALB
+- Secure database access via security groups
+- Automatic backend deployment on every GitHub push
+- Health checks via Application Load Balancer
 
-⚙ Automated CI/CD using GitHub Actions
+---
 
-This project showcases cloud architecture design, deployment automation, and backend-database integration.
+## 🏗 Architecture
 
-✨ Features
-
-Add users to database
-
-Fetch users from RDS
-
-Frontend connected to backend via ALB
-
-Backend connected securely to RDS
-
-CI/CD auto-deploy on every push to main
-
-Load balancer health checks
-
-Public CloudFront distribution
-
-🏗 Architecture
-User (Browser)
-        ↓
-CloudFront (CDN)
-        ↓
-Amazon S3 (Frontend)
-        ↓
-Application Load Balancer
-        ↓
-Amazon EC2 (Node.js Backend)
-        ↓
+User (Browser)  
+↓  
+CloudFront (CDN)  
+↓  
+Amazon S3 (Frontend)  
+↓  
+Application Load Balancer  
+↓  
+Amazon EC2 (Node.js Backend)  
+↓  
 Amazon RDS (MySQL Database)
-🛠 Tech Stack
-Layer	Technology
-Frontend	HTML, CSS, JavaScript
-Backend	Node.js, Express
-Database	Amazon RDS (MySQL)
-Hosting	Amazon EC2
-Load Balancer	AWS Application Load Balancer
-CDN	Amazon CloudFront
-CI/CD	GitHub Actions
-Cloud Platform	AWS
-🔁 CI/CD Workflow
 
-Code pushed to main branch
+---
 
-GitHub Actions automatically triggers
+## 🛠 Tech Stack
 
-Workflow connects to EC2 via SSH
+| Layer | Technology |
+|------|------------|
+| Frontend | HTML, CSS, JavaScript |
+| Backend | Node.js, Express |
+| Database | Amazon RDS (MySQL) |
+| Hosting | Amazon EC2 |
+| Load Balancer | AWS Application Load Balancer |
+| CDN | Amazon CloudFront |
+| CI/CD | GitHub Actions |
+| Cloud Platform | AWS |
 
-Backend code updated
+---
 
-Node.js server restarted automatically
+## 🔁 CI/CD Workflow
 
-This ensures continuous deployment without manual SSH login.
+1. Code is pushed to the `main` branch
+2. GitHub Actions pipeline is triggered
+3. Workflow connects to EC2 via SSH
+4. Backend code is pulled and dependencies installed
+5. Node.js server is restarted automatically
 
-⚙ Environment Configuration
+This ensures **continuous deployment without manual intervention**.
 
-Environment variables used:
+---
 
+## ⚙ Environment Variables
+
+Sensitive configuration is handled using environment variables:
+
+```
 DB_HOST=multi-tier-db.cxo662iosvk3.eu-north-1.rds.amazonaws.com
 DB_USER=admin
-DB_PASSWORD=****
+DB_PASSWORD=********
 DB_NAME=myapp
+```
 
-Secrets are not committed to GitHub.
+Secrets are not committed to the repository.
 
-☁ Deployment Overview
+---
+
+## ☁ Deployment Overview
 
 High-level deployment steps:
+1. Launch EC2 instance (Amazon Linux 2023)
+2. Create RDS MySQL database
+3. Configure security groups
+4. Set up Application Load Balancer
+5. Host frontend on S3
+6. Enable CloudFront distribution
+7. Configure GitHub Actions CI/CD pipeline
 
-Launch EC2 instance (Amazon Linux 2023)
+---
 
-Configure security groups
+## 🔒 Security Practices
 
-Set up RDS MySQL instance
+- RDS database is not publicly accessible
+- Database access restricted to EC2 security group
+- Secrets stored as environment variables
+- SSH authentication via GitHub Secrets
+- Load balancer health checks enabled
 
-Configure Application Load Balancer
+---
 
-Deploy frontend to S3
+## 📈 Future Improvements
 
-Configure CloudFront distribution
+- HTTPS using ACM certificate
+- Docker containerization
+- Frontend CI/CD automation
+- Auto Scaling Group for backend
+- Monitoring using CloudWatch
 
-Implement GitHub Actions CI/CD pipeline
+---
 
-🔒 Security Practices
-
-RDS not publicly accessible
-
-Security groups restrict DB access to EC2 only
-
-Secrets stored using environment variables
-
-CI/CD SSH authentication via GitHub Secrets
-
-Load Balancer health checks configured
-
-📈 Future Improvements
-
-HTTPS via ACM certificate
-
-Docker containerization
-
-Frontend CI/CD automation
-
-Auto-scaling group
-
-Monitoring using CloudWatch
-
-🎓 Internship Project Highlights
+## 🎓 Internship Project Highlights
 
 This project demonstrates:
+- 3-tier AWS architecture
+- Cloud deployment practices
+- Load balancing concepts
+- Database integration
+- CI/CD automation using GitHub Actions
+- Secure cloud networking
 
-3-tier AWS architecture
+---
 
-Cloud deployment practices
+## 👨‍💻 Author
 
-Load balancing concepts
-
-RDS integration
-
-CI/CD automation
-
-Secure networking configuration
-
-👨‍💻 Author
-
-Dhanush S
-B.E Computer Science Engineering
+**Dhanush S**  
+B.E Computer Science Engineering  
 Cloud & DevOps Enthusiast
